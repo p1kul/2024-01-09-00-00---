@@ -23,18 +23,18 @@ class TournamentTest(unittest.TestCase):
 
     def test_1(self):
         dist = tor.Tournament(90, self.first, self.third)
-        distance = dist.start()
-        self.all_results['Первый забег'] = distance
-        self.assertTrue(distance[len(distance)],'Ник')
+        self.distance = dist.start()
+        self.all_results['Первый забег'] = self.distance
+        self.assertEqual(self.distance[len(self.distance)],'Ник')
 
     def test_2(self):
         dist = tor.Tournament(90, self.second, self.third)
-        distance = dist.start()
-        self.all_results['Второй забег'] = distance
-        self.assertTrue(distance[len(distance)],'Ник')
-
+        self.distance = dist.start()
+        self.all_results['Второй забег'] = self.distance
+        self.assertEqual(self.distance[len(self.distance)], 'Ник')
+        
     def test_3(self):
         dist = tor.Tournament(90, self.first, self.second, self.third)
-        distance = dist.start()
-        self.all_results['Третий забег'] = distance
-        self.assertTrue(distance[len(distance)],'Ник')
+        self.distance = dist.start()
+        self.all_results['Третий забег'] = self.distance
+        self.assertEqual(self.distance[len(self.distance)],'Ник')
